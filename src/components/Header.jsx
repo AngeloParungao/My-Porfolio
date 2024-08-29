@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faBars,
@@ -35,9 +36,15 @@ function Header({ dark, toggleDarkMode }) {
   };
 
   return (
-    <div
+    <motion.div
       className={`fixed top-0 h-16 w-full flex justify-between items-center font-poppins px-10 lg:px-28 xl:px-35
       ${dark && scrolled? "dark dark-glass-effect" : ""} ${!dark && scrolled ? "light light-glass-effect" : "bg-transparent"} transition-all duration-300 z-10`}
+      initial={{
+        translateY : '-100%'
+      }}
+      animate={{ 
+       translateY : '0' 
+      }}
     >
       <img src={dark ? logoLight : logoDark} alt="Logo" className="w-12" />
 
@@ -67,7 +74,7 @@ function Header({ dark, toggleDarkMode }) {
           toggleMenu={toggleMenu}
         />
       )}
-    </div>
+    </motion.div>
   );
 }
 
