@@ -9,3 +9,12 @@
     color: white;
 }
   
+.dark-glass-effect {
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(10px);
+}
+
+.light-glass-effect {
+    background: rgba(160, 160, 160, 0.4);
+    backdrop-filter: blur(10px);
+}
