@@ -33,42 +33,15 @@ function App() {
   };
 
   const srcs = [
-    {
-      title : "HTML",
-      logo : logos.html 
-    },
-    {
-      title : "CSS",
-      logo : logos.css
-    },
-    {
-      title : "JavaScript",
-      logo : logos.js
-    },
-    {
-      title : "React",
-      logo : logos.react
-    },
-    {
-      title : "Tailwind",
-      logo : logos.tailwind
-    },
-    {
-      title : "MySQL",
-      logo : logos.mysql
-    },
-    {
-      title : "PHP",
-      logo : logos.php
-    },
-    {
-      title : "Python",
-      logo : logos.python
-    },
-    {
-      title : "Figma",
-      logo : logos.figma
-    }
+    { title : "HTML", logo : logos.html },
+    { title : "CSS", logo : logos.css },
+    { title : "JavaScript", logo : logos.js},
+    { title : "React", logo : logos.react },
+    { title : "Tailwind", logo : logos.tailwind },
+    { title : "MySQL", logo : logos.mysql },
+    { title : "PHP", logo : logos.php },
+    { title : "Python", logo : logos.python },
+    { title : "Figma", logo : logos.figma }
   ];
 
   const techAnimations = {
@@ -107,7 +80,7 @@ function App() {
           <div>
             <Header dark={dark} toggleDarkMode={toggleDarkMode} />
             {/*--------------------------------------Home Section--------------------------------------*/}
-            <section className="flex lg:flex-row flex-col-reverse justify-center items-center h-screen w-full px-10 lg:px-24 xl:px-35 lg:gap-0 md:gap-15 gap-10 h-screen">
+            <section id="home" className="flex lg:flex-row flex-col-reverse justify-center items-center h-screen w-full px-10 lg:px-24 xl:px-35 lg:gap-0 md:gap-15 gap-10 h-screen">
               <motion.div 
                 className="flex flex-col items-center lg:items-start w-full lg:w-1/2 gap-5 lg:gap-7"
                 initial={{ 
@@ -173,7 +146,7 @@ function App() {
                 </motion.div>
                 <div className="flex flex-row lg:flex-col justify-center items-center gap-8 text-xl">
                   <motion.a
-                    href="https://www.facebook.com"
+                    href="https://www.facebook.com/parungao.angelo.2802/"
                     aria-label="Facebook"
                     initial={{ 
                       x: isSmallScreen ? "0" : "1rem",
@@ -188,11 +161,16 @@ function App() {
                     transition={{
                       duration: 1,
                     }}
+                    whileHover={{
+                      scale: 1.2,
+                      transition: { duration: 0.3 },
+                      color: "#1877f2",
+                    }}
                   >
                     <FontAwesomeIcon icon={faFacebook} />
                   </motion.a>
                   <motion.a
-                    href="https://www.instagram.com"
+                    href="https://www.instagram.com/eyemel_/"
                     aria-label="Instagram"
                     initial={{ 
                       x: isSmallScreen ? "0" : "1rem",
@@ -208,12 +186,17 @@ function App() {
                       duration: 1,
                       delay: 0.5,
                     }}
+                    whileHover={{
+                      scale: 1.2,
+                      transition: { duration: 0.3 },
+                      color: "#e4405f",
+                    }}
                   >
                     <FontAwesomeIcon icon={faInstagram} />
                   </motion.a>
                   <motion.a
-                    href="https://www.instagram.com"
-                    aria-label="Instagram"
+                    href="https://github.com/AngeloParungao"
+                    aria-label="Github"
                     initial={{ 
                       x: isSmallScreen ? "0" : "1rem",
                       y: isSmallScreen ? "1rem" : "0",  
@@ -227,6 +210,10 @@ function App() {
                     transition={{
                       duration: 1,
                       delay: 1,
+                    }}
+                    whileHover={{
+                      scale: 1.2,
+                      transition: { duration: 0.3 },
                     }}
                   >
                     <FontAwesomeIcon icon={faGithub} />
@@ -248,6 +235,11 @@ function App() {
                       duration: 1,
                       delay: 1.5,
                     }}
+                    whileHover={{
+                      scale: 1.2,
+                      transition: { duration: 0.3 },
+                      color: "#0077b5",
+                    }}
                   >
                     <FontAwesomeIcon icon={faLinkedin} />
                   </motion.a>
@@ -255,7 +247,7 @@ function App() {
               </div>
             </section>
             {/*--------------------------------------About Section--------------------------------------*/}
-            <section className="h-screen flex flex-col justify-center items-center w-full px-10 lg:px-28 xl:px-35">
+            <section id="about" className="h-screen flex flex-col justify-center items-center w-full px-10 lg:px-28 xl:px-35">
               <div className="flex flex-col items-center w-full">
                 <motion.span className="w-full font-medium text-base lg:text-xl mb-4 border-b-2 border-dashed border-gray-400 dark:border-gray-600 pb-3"
                   initial={{
