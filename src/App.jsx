@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { useMediaQuery } from "react-responsive";
 import Header from "./components/Header";
-import Splash from "./components/Splash";
 import "./App.css";
 import logos from "./assets/images";
 import profile from "./assets/profile.jpg";
@@ -69,12 +68,46 @@ function App() {
     <div className={dark ? "dark" : ""}>
       {showSplash && 
         <motion.div
+        className="h-screen flex justify-center items-center overflow-hidden dark"
         initial={{ y: "0%" }}
-        animate={{ y: "-100%" }}
-        transition={{ duration: 1, delay: 2,ease: "easeInOut" }}
+        animate={{ 
+          y: "-100%", 
+          borderBottomLeftRadius: "50%", 
+          borderBottomRightRadius: "50%" 
+        }}
+        transition={{ duration: 1, delay: 2, ease: "easeInOut" }}
       >
-          <Splash />
-        </motion.div>
+        <motion.span 
+          className="flex text-6xl md:text-8xl font-bold text-center overflow-hidden"
+          initial={{ x: "-100%" }}
+          animate={{ 
+            x: "0%", 
+            transition: { duration: 0.3, ease: "easeInOut" } 
+          }}
+        >
+          HELL0
+          <motion.img 
+            src={logos.icon} 
+            alt="icon" 
+            className="self-end w-4 h-4 md:w-6 md:h-6"
+            initial={{ y: "-100%", opacity: 0 }} // Start from the top of the screen
+            animate={{ 
+              y: "0%", 
+              opacity: 1, 
+              transition: { 
+                duration: 0.6, 
+                delay: 0.6, 
+                ease: "easeOut",
+                type: "spring", // Add bounce effect
+                stiffness: 100,
+                damping: 10,
+              } 
+            }}
+          />
+        </motion.span>
+      
+      </motion.div>
+      
       }
       {!showSplash &&
           <div>
@@ -148,6 +181,7 @@ function App() {
                   <motion.a
                     href="https://www.facebook.com/parungao.angelo.2802/"
                     aria-label="Facebook"
+                    className="text-black dark:text-white hover:text-[#4267B2] hover:dark:text-[#4267B2]"
                     initial={{ 
                       x: isSmallScreen ? "0" : "1rem",
                       y: isSmallScreen ? "1rem" : "0",  
@@ -161,17 +195,13 @@ function App() {
                     transition={{
                       duration: 1,
                     }}
-                    whileHover={{
-                      scale: 1.2,
-                      transition: { duration: 0.3 },
-                      color: "#1877f2",
-                    }}
                   >
                     <FontAwesomeIcon icon={faFacebook} />
                   </motion.a>
                   <motion.a
                     href="https://www.instagram.com/eyemel_/"
                     aria-label="Instagram"
+                    className="text-black dark:text-white hover:text-[#C13584] hover:dark:text-[#C13584]"
                     initial={{ 
                       x: isSmallScreen ? "0" : "1rem",
                       y: isSmallScreen ? "1rem" : "0",  
@@ -186,17 +216,13 @@ function App() {
                       duration: 1,
                       delay: 0.5,
                     }}
-                    whileHover={{
-                      scale: 1.2,
-                      transition: { duration: 0.3 },
-                      color: "#e4405f",
-                    }}
                   >
                     <FontAwesomeIcon icon={faInstagram} />
                   </motion.a>
                   <motion.a
                     href="https://github.com/AngeloParungao"
                     aria-label="Github"
+                    className="text-black dark:text-white hover:text-[#24292F] hover:dark:text-[#24292F]"
                     initial={{ 
                       x: isSmallScreen ? "0" : "1rem",
                       y: isSmallScreen ? "1rem" : "0",  
@@ -211,16 +237,13 @@ function App() {
                       duration: 1,
                       delay: 1,
                     }}
-                    whileHover={{
-                      scale: 1.2,
-                      transition: { duration: 0.3 },
-                    }}
                   >
                     <FontAwesomeIcon icon={faGithub} />
                   </motion.a>
                   <motion.a
                     href="https://www.linkedin.com"
                     aria-label="Linkedin"
+                    className="text-black dark:text-white hover:text-[#0077B5] hover:dark:text-[#0077B5]"
                     initial={{ 
                       x: isSmallScreen ? "0" : "1rem",
                       y: isSmallScreen ? "1rem" : "0",  
@@ -234,11 +257,6 @@ function App() {
                     transition={{
                       duration: 1,
                       delay: 1.5,
-                    }}
-                    whileHover={{
-                      scale: 1.2,
-                      transition: { duration: 0.3 },
-                      color: "#0077b5",
                     }}
                   >
                     <FontAwesomeIcon icon={faLinkedin} />

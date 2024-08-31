@@ -7,5 +7,6 @@ import mysql from './mysql.png'
 import python from './python.png'
 import php from './php.png'
 import figma from './figma.png'
+import icon from './Icon.png'
 
-export default { html, css, js, react, tailwind, mysql, python, php, figma };
+export default { html, css, js, react, tailwind, mysql, python, php, figma, icon };
