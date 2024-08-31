@@ -37,7 +37,7 @@ function Header({ dark, toggleDarkMode }) {
 
   return (
     <motion.div
-      className={`fixed top-0 h-16 w-full flex justify-between items-center font-poppins px-10 lg:px-28 xl:px-35
+      className={`fixed top-0 h-16 w-full flex justify-between items-center font-poppins px-10 lg:px-24 xl:px-35
       ${dark && scrolled? "dark dark-glass-effect" : ""} ${!dark && scrolled ? "light light-glass-effect" : "bg-transparent"} transition-all duration-300 z-10`}
       initial={{
         translateY : '-100%'

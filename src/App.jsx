@@ -107,7 +107,7 @@ function App() {
           <div>
             <Header dark={dark} toggleDarkMode={toggleDarkMode} />
             {/*--------------------------------------Home Section--------------------------------------*/}
-            <section className="flex lg:flex-row flex-col-reverse justify-center items-center h-screen w-full px-10 lg:px-28 xl:px-35 lg:gap-0 gap-10 h-screen">
+            <section className="flex lg:flex-row flex-col-reverse justify-center items-center h-screen w-full px-10 lg:px-24 xl:px-35 lg:gap-0 md:gap-15 gap-10 h-screen">
               <motion.div 
                 className="flex flex-col items-center lg:items-start w-full lg:w-1/2 gap-5 lg:gap-7"
                 initial={{ 
@@ -125,7 +125,7 @@ function App() {
                 }}
               >
                <span
-                  className="text-4xl md:text-6xl font-bold"
+                  className="text-4xl md:text-7xl font-bold"
                   style={{
                     WebkitTextStroke: `0.4px ${dark ? "gray" : "black"}`,
                     color: 'transparent',
@@ -133,10 +133,10 @@ function App() {
                 >
                   FRONT END DEV
                 </span>
-                <span className="text-xl md:text-xl font-normal">
+                <span className="text-xl md:text-2xl font-normal">
                   Hi there, I'm <span className="text-red-600 font-medium">Angelo</span>
                 </span>
-                <p className="font-bold text-2xl lg:text-4xl text-gray-800 lg:pr-4 dark:text-gray-400 text-center lg:text-left">
+                <p className="font-bold text-2xl md:text-5xl md:px-10 lg:px-0 text-gray-800 lg:pr-4 dark:text-gray-400 text-center lg:text-left">
                 Turning ideas into seamless, high-quality digital experiences.
                 </p>
                 <div className="flex flex-row gap-4">
