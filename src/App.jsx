@@ -109,7 +109,7 @@ function App() {
             {/*--------------------------------------Home Section--------------------------------------*/}
             <section className="flex lg:flex-row flex-col-reverse justify-center items-center h-screen w-full px-10 lg:px-28 xl:px-35 lg:gap-0 gap-10 h-screen">
               <motion.div 
-                className="flex flex-col items-center lg:items-start w-full lg:w-1/2 gap-3 lg:gap-7"
+                className="flex flex-col items-center lg:items-start w-full lg:w-1/2 gap-5 lg:gap-7"
                 initial={{ 
                   x: isSmallScreen ? "0" : "-3rem",
                   y: isSmallScreen ? "3rem" : "0",  
@@ -125,7 +125,7 @@ function App() {
                 }}
               >
                <span
-                  className="text-2xl md:text-6xl font-bold"
+                  className="text-4xl md:text-6xl font-bold"
                   style={{
                     WebkitTextStroke: `0.4px ${dark ? "gray" : "black"}`,
                     color: 'transparent',
