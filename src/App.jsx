@@ -107,9 +107,9 @@ function App() {
           <div>
             <Header dark={dark} toggleDarkMode={toggleDarkMode} />
             {/*--------------------------------------Home Section--------------------------------------*/}
-            <section className="flex lg:flex-row flex-col-reverse justify-center items-center h-screen w-full px-10 lg:px-28 xl:px-35 lg:gap-0 gap-10">
+            <section className="flex lg:flex-row flex-col-reverse justify-center items-center h-screen w-full px-10 lg:px-28 xl:px-35 lg:gap-0 gap-10 h-screen">
               <motion.div 
-                className="flex flex-col items-center lg:items-start w-full lg:w-1/2 gap-5"
+                className="flex flex-col items-center lg:items-start w-full lg:w-1/2 gap-3 lg:gap-7"
                 initial={{ 
                   x: isSmallScreen ? "0" : "-3rem",
                   y: isSmallScreen ? "3rem" : "0",  
@@ -124,25 +124,27 @@ function App() {
                   duration: 1,
                 }}
               >
-                <span className="text-2xl md:text-5xl font-bold">
-                  Angelo Miguel Parungao
+               <span
+                  className="text-2xl md:text-6xl font-bold"
+                  style={{
+                    WebkitTextStroke: `0.4px ${dark ? "gray" : "black"}`,
+                    color: 'transparent',
+                  }}
+                >
+                  FRONT END DEV
                 </span>
-                <span className="text-xl md:text-3xl text-red-600">
-                  Front-end Developer
+                <span className="text-xl md:text-xl font-normal">
+                  Hi there, I'm <span className="text-red-600 font-medium">Angelo</span>
                 </span>
-                <p className="font-medium text-gray-800 text-justify lg:pr-4 dark:text-gray-400 text-center lg:text-left">
-                  I specialize in crafting responsive, user-friendly web interfaces
-                  with a focus on clean, efficient code. Skilled in HTML, CSS,
-                  JavaScript, and React, I bring designs to life with a commitment to
-                  quality and performance. Explore my work to see how I turn ideas
-                  into seamless digital experiences.
+                <p className="font-bold text-2xl lg:text-4xl text-gray-800 lg:pr-4 dark:text-gray-400 text-center lg:text-left">
+                Turning ideas into seamless, high-quality digital experiences.
                 </p>
                 <div className="flex flex-row gap-4">
-                  <button className="bg-transparent text-red-600 border border-2 border-red-600 py-2 px-4 rounded-xl hover:text-white hover:bg-red-600 transition duration-500">
-                    Resume
-                  </button>
                   <button className="bg-red-600 text-white border border-2 border-red-600 py-2 px-4 rounded-xl hover:bg-transparent hover:text-red-600 hover:dark:text-white transition duration-500">
                     Contact Me
+                  </button>
+                  <button className="bg-transparent text-red-600 border border-2 border-red-600 py-2 px-4 rounded-xl hover:text-white hover:bg-red-600 transition duration-500">
+                    Resume
                   </button>
                 </div>
               </motion.div>
