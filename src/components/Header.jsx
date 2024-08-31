@@ -88,10 +88,10 @@ function Menu({ dark, toggleDarkMode, toggleMenu }) {
           onClick={toggleMenu}
         />
       </button>
-      <a href="#home" className="text-xl">Home</a>
-      <a href="#about" className="text-xl">About</a>
-      <a href="#skills" className="text-xl">Skills</a>
-      <a href="#contact" className="text-xl">Contact</a>
+      <a href="#home" className="text-xl" onClick={toggleMenu}>Home</a>
+      <a href="#about" className="text-xl" onClick={toggleMenu}>About</a>
+      <a href="#skills" className="text-xl" onClick={toggleMenu}>Skills</a>
+      <a href="#contact" className="text-xl" onClick={toggleMenu}>Contact</a>
       <button onClick={toggleDarkMode} aria-label="Toggle Dark Mode">
         {dark ? (
           <FontAwesomeIcon icon={faSun} className="text-xl text-red-500" />

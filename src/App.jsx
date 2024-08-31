@@ -68,7 +68,7 @@ function App() {
     <div className={dark ? "dark" : ""}>
       {showSplash && 
         <motion.div
-        className="h-screen flex justify-center items-center overflow-hidden dark"
+        className="h-dvh  flex justify-center items-center overflow-hidden dark"
         initial={{ y: "0%" }}
         animate={{ 
           y: "-100%", 
@@ -113,7 +113,7 @@ function App() {
           <div>
             <Header dark={dark} toggleDarkMode={toggleDarkMode} />
             {/*--------------------------------------Home Section--------------------------------------*/}
-            <section id="home" className="flex lg:flex-row flex-col-reverse justify-center items-center h-screen w-full px-10 lg:px-24 xl:px-35 lg:gap-0 md:gap-15 gap-10 h-screen">
+            <section id="home" className="flex lg:flex-row flex-col-reverse justify-center items-center h-dvh w-full px-10 lg:px-24 xl:px-35 lg:gap-0 md:gap-15 gap-10 h-screen">
               <motion.div 
                 className="flex flex-col items-center lg:items-start w-full lg:w-1/2 gap-5 lg:gap-7"
                 initial={{ 
@@ -265,7 +265,7 @@ function App() {
               </div>
             </section>
             {/*--------------------------------------About Section--------------------------------------*/}
-            <section id="about" className="h-screen flex flex-col justify-center items-center w-full px-10 lg:px-28 xl:px-35">
+            <section id="about" className="h-dvh flex flex-col justify-center items-center w-full px-10 lg:px-28 xl:px-35">
               <div className="flex flex-col items-center w-full">
                 <motion.span className="w-full font-medium text-base lg:text-xl mb-4 border-b-2 border-dashed border-gray-400 dark:border-gray-600 pb-3"
                   initial={{
