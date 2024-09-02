@@ -8,5 +8,7 @@ import python from './python.png'
 import php from './php.png'
 import figma from './figma.png'
 import icon from './Icon.png'
+import scroll from './scroll.png'
+import dark_scroll from './dark_scroll.png'
 
-export default { html, css, js, react, tailwind, mysql, python, php, figma, icon };
+export default { html, css, js, react, tailwind, mysql, python, php, figma, icon, scroll, dark_scroll };

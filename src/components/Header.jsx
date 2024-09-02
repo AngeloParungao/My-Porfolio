@@ -65,7 +65,7 @@ function Header({ dark, toggleDarkMode }) {
 
       {/* Bars Icon */}
       <div className="block lg:hidden">
-        <FontAwesomeIcon icon={faBars} aria-label="Menu" onClick={toggleMenu} />
+        <FontAwesomeIcon icon={faBars} aria-label="Menu" onClick={toggleMenu} className="hover:text-red-500"/>
       </div>
       {menuOpen && (
         <Menu
