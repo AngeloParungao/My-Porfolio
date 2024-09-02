@@ -14,7 +14,7 @@ import {
   faLinkedin,
 } from "@fortawesome/free-brands-svg-icons";
 
-import { faArrowDown, faEnvelope, faPhone } from "@fortawesome/free-solid-svg-icons";
+import { faArrowDown, faEnvelope, faLocationDot, faPhone } from "@fortawesome/free-solid-svg-icons";
 import Footer from "./components/Footer";
 
 function App() {
@@ -369,46 +369,62 @@ function App() {
           </section>
           <section id="contact" className="h-dvh w-full px-10 lg:px-28 xl:px-35 flex justify-center items-center">
               <Toaster position="bottom-right" reverseOrder={false}/>
-              <div className="w-full flex flex-col md:flex-row justify-center lg:items-center gap-10 md:gap-0">
+              <motion.div className="w-full flex flex-col md:flex-row justify-center lg:items-center gap-10 md:gap-0"
+                initial={{
+                  translateY: "10%",
+                  opacity: 0,
+                }}
+                whileInView={{
+                  translateY: 0,
+                  opacity: 1,
+                }}
+                transition={{
+                  duration: 1,
+                }}
+              >
                 <div className="md:w-1/2 flex flex-col justify-center gap-5 md:p-5">
                   <span className="text-4xl md:text-6xl font-medium">Let's start a project together</span>
-                  <span className="text-xl md:text-2xl text-gray-600 dark:text-gray-400">Get in touch</span>
-                  <div className="flex flex-col items-center gap-3 py-3 md:px-5">
-                    <div className="flex items-center w-full h-[3rem] bg-gray-200 dark:bg-black rounded-lg p-3 hover:cursor-pointer">
-                      <FontAwesomeIcon icon={faEnvelope} className="text-md p-3" />
-                      <span
-                        onClick={() => {
+                  <span className="text-xl md:text-2xl text-red-600 dark:text-gray-400">Get in touch</span>
+                  <div className="flex flex-col items-center gap-5 py-3 md:px-5">
+                    <div className="flex items-center w-full h-[3rem] shadow-md shadow-gray-500 dark:bg-black dark:shadow-gray-500 rounded-lg p-3 hover:cursor-pointer hover:transform hover:scale-105 transition duration-300" onClick={() => {
                           navigator.clipboard.writeText("angeloparungao.ap@gmail.com");
                           toast.success("Email copied to clipboard");
-                        }}
-                      >
+                        }}>
+                      <FontAwesomeIcon icon={faEnvelope} className="text-md p-3" />
+                      <span>
                         angeloparungao.ap@gmail.com
                       </span>
                     </div>
-                    <div className="flex items-center w-full h-[3rem] bg-gray-200 dark:bg-black rounded-lg p-3 hover:cursor-pointer">
-                      <FontAwesomeIcon icon={faPhone} className="text-md p-3" />
-                      <span
-                        onClick={() => {
+                    <div className="flex items-center w-full h-[3rem] shadow-md shadow-gray-500 dark:bg-black dark:shadow-gray-500 rounded-lg p-3 hover:cursor-pointer hover:transform hover:scale-105 transition duration-300" onClick={() => {
                           navigator.clipboard.writeText("+63 992 404 6185");
                           toast.success("Phone number copied to clipboard");
-                        }}
-                      >
+                        }}>
+                      <FontAwesomeIcon icon={faPhone} className="text-md p-3" />
+                      <span>
                         +63 992 404 6185
+                      </span>
+                    </div>
+                    <div className="flex items-center w-full h-[3rem] shadow-md shadow-gray-500 dark:bg-black dark:shadow-gray-500 rounded-lg p-3 hover:cursor-pointer hover:transform hover:scale-105 transition duration-300" onClick={() => {
+                      window.open("https://www.google.com/maps/search/?api=1&query=14.9542,120.8961", "_blank");
+                    }}>
+                      <FontAwesomeIcon icon={faLocationDot} className="text-md p-3" />
+                      <span>
+                        Bulacan, Philippines, 3006
                       </span>
                     </div>
                   </div>
                 </div>
-                <div className="flex flex-col justify-center md:w-1/2 pt-10 md:p-10 border-t-2 md:border-t-0 md:border-l-2 border-gray-200 dark:border-gray-600">
+                <div className="flex flex-col justify-center md:w-1/2 pt-10 md:p-10 border-t-2 md:border-t-0 md:border-l-2 border-gray-100 dark:border-gray-600">
                   <form action="" className="flex flex-col gap-5">
                     <span className="text-2xl font-medium">Send me a message</span>
-                    <input type="text" placeholder="Email" className="w-full h-[2.5rem] bg-gray-200 dark:bg-black rounded-lg pl-5 dark:placeholder:text-gray-500 focus:outline-black focus:dark:outline-white"/>
-                    <input type="text" placeholder="Subject" className="w-full h-[2.5rem] bg-gray-200 dark:bg-black rounded-lg pl-5 dark:placeholder:text-gray-500 focus:outline-black focus:dark:outline-white"/>
+                    <input type="text" placeholder="Email" className="w-full h-[2.5rem] bg-gray-100 dark:bg-black rounded-lg pl-5 dark:placeholder:text-gray-500 focus:outline-black focus:dark:outline-white"/>
+                    <input type="text" placeholder="Subject" className="w-full h-[2.5rem] bg-gray-100 dark:bg-black rounded-lg pl-5 dark:placeholder:text-gray-500 focus:outline-black focus:dark:outline-white"/>
                     <label htmlFor="Message" className="text-sm text-gray-600 dark:text-gray-400">Tell me about your project</label>
-                    <textarea placeholder="Message" id="Message" className="w-full h-[10rem] bg-gray-200 dark:bg-black rounded-lg p-5 resize-none dark:placeholder:text-gray-500 focus:outline-black focus:dark:outline-white"/>
-                    <button className="w-full h-[2.5rem] bg-red-500 rounded-lg text-white">Send</button>
+                    <textarea placeholder="Message" id="Message" className="w-full h-[10rem] bg-gray-100 dark:bg-black rounded-lg p-5 resize-none dark:placeholder:text-gray-500 focus:outline-black focus:dark:outline-white"/>
+                    <button className="w-full h-[2.5rem] bg-red-500 rounded-lg text-white hover:bg-red-600">SEND</button>
                   </form>
                 </div>
-              </div>
+              </motion.div>
           </section>
           <Footer />
         </div>
