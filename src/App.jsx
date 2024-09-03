@@ -50,43 +50,36 @@ function App() {
     setDarkMode((prevDark) => !prevDark);
   };
 
-  const srcs = [
-    { title: "HTML", logo: logos.html },
-    { title: "CSS", logo: logos.css },
-    { title: "JavaScript", logo: logos.js },
-    { title: "React", logo: logos.react },
-    { title: "Tailwind", logo: logos.tailwind },
-    { title: "MySQL", logo: logos.mysql },
-    { title: "PHP", logo: logos.php },
-    { title: "Python", logo: logos.python },
-    { title: "Figma", logo: logos.figma },
-  ];
-
-  const techAnimations = {
-    initial: {
-      y: "0rem",
-      boxShadow: dark
-        ? "0 10px 20px rgba(255,255,255,0)"
-        : "0 10px 20px rgba(0,0,0,0)",
-    },
-    animate: {
-      y: ["0rem", "-1rem", "0rem"],
-      boxShadow: [
-        dark ? "0 10px 20px rgba(255,255,255,0)" : "0 10px 20px rgba(0,0,0,0)",
-        dark
-          ? "0 10px 20px rgba(255,255,255,0.5)"
-          : "0 10px 20px rgba(0,0,0,0.5)",
-        dark ? "0 10px 20px rgba(255,255,255,0)" : "0 10px 20px rgba(0,0,0,0)",
+  const stacks = [
+    {
+      title: "Frontend",
+      items: [
+        { title: "HTML", logo: logos.html },
+        { title: "CSS", logo: logos.css },
+        { title: "Tailwind CSS", logo: logos.tailwind },
+        { title: "React", logo: logos.react },
+        { title: "JavaScript", logo: logos.js },
       ],
     },
-    whileHover: {
-      y: "-1rem",
-      boxShadow: dark
-        ? "0 10px 20px rgba(255,255,255,0.5)"
-        : "0 10px 20px rgba(0,0,0,0.5)",
-      transition: { duration: 0.3, ease: "easeInOut" },
+    {
+      title: "Backend",
+      items: [
+        { title: "Node.js", logo: logos.node },
+        { title: "PHP", logo: logos.php },
+        { title: "Python", logo: logos.python },
+      ],
     },
-  };
+    {
+      title: "Databases / Tools / Version Control",
+      items: [
+        { title: "MySQL", logo: logos.mysql },
+        { title: "Figma", logo: logos.figma },
+        { title: "VS Code", logo: logos.vscode },
+        { title: "Git", logo: logos.git },
+        { title: "GitHub", logo: logos.github },
+      ],
+    }    
+  ];
 
   return (
     <div className={dark ? "dark" : ""}>
@@ -316,54 +309,45 @@ function App() {
           </section>
           {/*--------------------------------------About Section--------------------------------------*/}
           <section
-            id="about"
-            className="h-dvh flex flex-col justify-center items-center w-full px-10 lg:px-28 xl:px-35"
+            id="skills"
+            className="h-dvh w-full flex flex-col justify-center items-center w-full px-10 lg:px-28 xl:px-35"
           >
-            <div className="flex flex-col items-center w-full">
-              <motion.span
-                className="w-full font-medium text-base lg:text-xl mb-4 border-b-2 border-dashed border-gray-400 dark:border-gray-600 pb-3"
-                initial={{
-                  translateX: "-10%",
-                  opacity: 0,
-                }}
-                whileInView={{
-                  translateX: 0,
-                  opacity: 1,
-                }}
-                transition={{
-                  duration: 2,
-                }}
-              >
-                TECHNOLOGIES
+            <div className="flex flex-col items-center w-full gap-8">
+              <motion.span className="text-3xl font-bold tracking-widest">
+                SKILLS
               </motion.span>
-              <div className="flex flex-wrap justify-center items-center gap-14 py-10">
-                {srcs.map((src, index) => {
-                  return (
-                    <div
-                      className="flex flex-col justify-center items-center"
-                      key={src.title}
-                    >
-                      <motion.img
-                        src={src.logo}
-                        title={src.title}
-                        className="w-16 rounded-lg p-3 px-3 backdrop-blur-md cursor-pointer"
-                        initial={techAnimations.initial}
-                        animate={techAnimations.animate}
-                        whileHover={techAnimations.whileHover}
-                        transition={{
-                          duration: 5,
-                          repeat: Infinity,
-                          ease: "easeInOut",
-                          delay: index * 0.5,
-                        }}
-                        alt={src.title}
-                      />
-                      <span className="text-sm text-gray-600 font-medium">
-                        {src.title}
-                      </span>
-                    </div>
-                  );
-                })}
+              <div className="flex flex-col gap-10 md:w-3/4 lg:w-2/3">
+                  {stacks.map((stack, index) => {
+                    return (
+                      <div key={index} className="relative flex flex-col gap-5 p-10 border border-gray-400 rounded-xl">
+                        <div className="absolute top-[-0.6rem] md:top-[-1rem] left-[1rem] text-xs md:text-lg uppercase font-medium bg-white dark:bg-[#121114] px-2 text-gray-400">{stack.title}</div>
+                        <div className="flex flex-wrap justify-center w-full gap-8 md:gap-10">
+                          {stack.items.map((item, itemIndex) => {
+                            return (
+                              <motion.img
+                                src={item.logo}
+                                alt={item.title}
+                                key={`${index}-${itemIndex}`}
+                                className="w-6 sm:w-8 md:w-10"
+                                initial={{
+                                  scale: 0.5,
+                                  opacity: 0,
+                                }}
+                                whileInView={{
+                                  scale: 1,
+                                  opacity: 1,
+                                }}
+                                transition={{
+                                  duration: 0.5,
+                                  delay: index * 0.1 + itemIndex * 0.05,
+                                }}
+                              />
+                            );
+                          })}
+                        </div>
+                      </div>
+                    );
+                  })}
               </div>
             </div>
           </section>
@@ -412,6 +396,20 @@ function App() {
                         Bulacan, Philippines, 3006
                       </span>
                     </div>
+                    <div className="flex items-center w-full h-[3rem] px-4 gap-5">
+                      <a href="https://www.facebook.com/parungao.angelo.2802/">
+                        <FontAwesomeIcon icon={faFacebook} className="text-xl text-[#1877F2] hover:cursor-pointer" />
+                      </a>
+                      <a href="https://www.instagram.com/eyemel_/">
+                        <FontAwesomeIcon icon={faInstagram} className="text-xl text-[#E1306C] hover:cursor-pointer" />
+                      </a>
+                      <a href="https://github.com/AngeloParungao">
+                        <FontAwesomeIcon icon={faGithub} className="text-xl text-[#333] hover:cursor-pointer" />  
+                      </a>
+                      <a href="#">
+                        <FontAwesomeIcon icon={faLinkedin} className="text-xl text-[#0A66C2] hover:cursor-pointer" />
+                      </a>
+                    </div>
                   </div>
                 </div>
                 <div className="flex flex-col justify-center md:w-1/2 pt-10 md:p-10 border-t-2 md:border-t-0 md:border-l-2 border-gray-100 dark:border-gray-600">
@@ -426,7 +424,7 @@ function App() {
                 </div>
               </motion.div>
           </section>
-          <Footer />
+          <Footer dark={dark}/>
         </div>
       )}
     </div>

@@ -53,6 +53,7 @@ function Header({ dark, toggleDarkMode }) {
         <a href="#home" className="hover:text-red-600">Home</a>
         <a href="#about" className="hover:text-red-500">About</a>
         <a href="#skills" className="hover:text-red-500">Skills</a>
+        <a href="#projects" className="hover:text-red-500">Project</a>
         <a href="#contact" className="hover:text-red-500">Contact</a>
         <button onClick={toggleDarkMode} aria-label="Toggle Dark Mode">
           {dark ? (

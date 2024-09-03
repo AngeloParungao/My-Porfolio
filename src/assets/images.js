@@ -7,8 +7,14 @@ import mysql from './mysql.png'
 import python from './python.png'
 import php from './php.png'
 import figma from './figma.png'
+import git from './git.png'
+import github from './github.png'
+import node from './node.png'
+import vscode from './vscode.png'
 import icon from './Icon.png'
 import scroll from './scroll.png'
 import dark_scroll from './dark_scroll.png'
+import logo_black from './logo-black.png'
+import logo_white from './logo-white.png'
 
-export default { html, css, js, react, tailwind, mysql, python, php, figma, icon, scroll, dark_scroll };
+export default { html, css, js, react, tailwind, mysql, python, php, figma, git, github, node, vscode, icon, scroll, dark_scroll, logo_black, logo_white };
